@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'polls.apps.PollsConfig' , # Опрос
-    'polls',
+    
+    'mainApp',
+    'polls.apps.PollsConfig' , # Опрос, отправляет к файлу apps.py приложения polls, Какия-то хитрая схема!?
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'Clo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # чтобы Django искал во всех папках 'templates' подключенных приложений
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

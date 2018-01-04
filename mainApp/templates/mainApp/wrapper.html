@@ -1,0 +1,35 @@
+
+<!-- шаблон под - Шаблонизатор Jinja(Дзиндзя) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Wrapper</title>
+
+    <!-- Загрузка статических файлов -->
+    {% load staticfiles %}    <!-- или {% load static %} -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainApp/style.css' %}">
+
+</head>
+<body>
+
+    {% include "mainApp/includes/header.html" %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="container">
+        <img src="{% static 'mainApp/images/submit.png' %}" class="img-thumbnail">
+        <hr>
+        &copy; Все права защищены 2018
+    </div>
+</body>
+</html>

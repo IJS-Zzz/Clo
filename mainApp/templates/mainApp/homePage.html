@@ -1,0 +1,31 @@
+<!-- Подключаем файл обёртку  -->
+{% extends "mainApp/wrapper.html" %} 
+<!-- это то что будет отвечать за главный вид сайта -->
+
+
+<!-- Блок контента. 
+    То, что будем вставлять в блоке контента
+    в файле 'wrapper.html' -->
+{% block content %}
+    
+
+    <!-- Встраивание шаблона (Блок),
+        можем использовать много-много раз на одной странице.
+        Это кусок кода.
+        Может встраиваться куда угодно-->
+    {% include "mainApp/includes/some_html.html" %}
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Привет, мир!</h1>
+            <h3>Test home page.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic maiores, itaque. At et, odio commodi rerum tempora consequatur consequuntur non dicta asperiores ea. Fugiat ipsam amet ipsum eum sequi rerum excepturi pariatur laudantium earum expedita odio consequatur non odit sapiente minima quidem ea nemo culpa facilis, repellat! Architecto animi accusamus eveniet pariatur neque iure laborum sapiente minus odio placeat ea ipsum atque, nesciunt mollitia cum, iusto illum alias ad libero labore ullam ratione quam maiores. Qui necessitatibus suscipit neque sequi aspernatur. Recusandae temporibus fugit reprehenderit voluptatibus porro ipsum placeat at, quos natus officia. Assumenda quia ut illo at, aliquid saepe!</p>
+            <p>
+                <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+                <a href="/fuck" class="btn btn-primary btn-lg">Узнать больше &raquo;</a>
+            </p>
+        </div>
+    </div>
+    
+{% endblock %}
