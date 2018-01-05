@@ -1,0 +1,79 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Основная часть -->
+    <main class="main">
+        <div class="main_catalog">
+            <div class="catalog_main_box">
+                <h1>Косуха</h1>
+
+                <div id="buy">
+                    <a href="/contacts">Купить</a>
+                </div>
+
+                <div class="catalog_image_box">
+                    <a href="{% static 'mainApp/images/jacket_1.jpg' %}" target="_blank"><img src="{% static 'mainApp/images/jacket_1.jpg' %}" alt="big"></a>
+                    <!-- <a href="{% static 'mainApp/images/jacket_2.jpg' %}" target="_blank"><img src="{% static 'mainApp/images/jacket_2.jpg' %}" alt="small"></a> -->
+                    <a href="{% static 'mainApp/images/jacket_3.jpg' %}" target="_blank"><img src="{% static 'mainApp/images/jacket_3.jpg' %}" alt="small"></a>
+                    <!-- <a href="{% static 'mainApp/images/jacket_4.jpg' %}" target="_blank"><img src="{% static 'mainApp/images/jacket_4.jpg' %}" alt="small"></a> -->
+                </div>
+
+                <div class="short_decriptiop">
+                    <h3>Описание товара</h3>
+                    <p >Косуха из&nbsp;эко-замши с&nbsp;розами на&nbsp;подкладе.</p>
+                </div>
+            </div>
+
+            <div class="catalog_text_box">
+                <div class="full_decription">
+                    <h3>Подробное описание товара</h3>
+                    <p>Куртка &laquo;Косуха&raquo; ручной работы, сшитая с&nbsp;любовью и&nbsp;темлом. В&nbsp;куртке используются только 100% натуральные и&nbsp;экологичные материалы, это новый взгляд на&nbsp;старые вещи. Куртка отлично подойдет на&nbsp;сезон весна/осень, согревая своего хозяина.</p>
+                </div>
+
+                <div class="options">
+                    <h3>Характеристики товара</h3>
+                    <ul >
+                        <li>Размер&nbsp;&mdash; S-M</li>
+                        <li>100% натуральные материлы.</li>
+                        <li>Куртка: эко-замша.</li>
+                        <li>Подкладка: хлопок.</li>
+                        <li>Цена: 7500₽</li>
+                    </ul>
+
+                    <table>
+                        <tr>
+                            <td colspan="5">Сравнение товара</td>
+                        </tr>
+                        <tr>
+                            <td>\</td>
+                            <td colspan="4">Характеристики</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Товар</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

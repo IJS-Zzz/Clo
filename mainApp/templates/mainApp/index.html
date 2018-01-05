@@ -1,0 +1,34 @@
+<!-- Подключаем файл обёртку  -->
+{% extends "mainApp/wrapper.html" %} 
+<!-- это то что будет отвечать за главный вид сайта -->
+{% load static %}
+
+<!-- Блок контента. 
+    То, что будем вставлять в блоке контента
+    в файле 'wrapper.html' -->
+{% block content %}
+    
+<!-- Основная часть -->
+<main class="main">
+    <div class="main_index">
+        <h1>Clo Designer</h1>
+        <h2>Магазин Дизайнеры одежды</h2>
+
+        <div class="main_index_image_box">
+            <a href="/catalog">
+                <img id="slider" src="{% static 'mainApp/images/main_image.jpg' %}" alt="Постер главной страницы" >
+            </a>
+        </div>
+        <div class="loading_box">
+            <div id="loading"></div>
+        </div>
+        <button onclick="prev()"></button>
+        <button onclick="next()"></button>
+
+        <p>Добропозаловать на страницу нашего интернет магазина.<br>
+            Рады, что посетили наш портал.<br>
+        Приятного вам времяпрепровождения.</p>
+    </div>
+</main>
+    
+{% endblock %}

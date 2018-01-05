@@ -1,0 +1,46 @@
+
+<!-- шаблон под - Шаблонизатор Jinja(Дзиндзя) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Wrapper</title>
+
+    <!-- Загрузка статических файлов -->
+    {% load staticfiles %}    <!-- или {% load static %} -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainApp/lesson/style2.css' %}">
+
+</head>
+<body>
+
+    {% include "mainApp/lesson/includes/header2.html" %}
+
+    <div class="jumbotron">
+        <div class="container">
+
+            {% block content %}
+
+            {% endblock %}
+
+            <p>
+                <a href="/home" class="btn btn-success btn-lg">Главная страница</a>
+                <a href="/fuck" class="btn btn-primary btn-lg">Новости &raquo;</a>
+                <a href="/contact" class="btn btn-info btn-lg">Контакты</a>
+            </p>
+            {% include "mainApp/lesson/includes/some_html.html" %}
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="{% static 'mainApp/images/submit.png' %}" class="img-thumbnail">
+        <hr>
+        &copy; Все права защищены 2018
+    </div>
+</body>
+</html>

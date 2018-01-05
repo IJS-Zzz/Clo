@@ -1,0 +1,41 @@
+<!-- Подключаем файл обёртку  -->
+{% extends "mainApp/wrapper.html" %} 
+<!-- это то что будет отвечать за главный вид сайта -->
+{% load static %}
+
+<!-- Блок контента. 
+    То, что будем вставлять в блоке контента
+    в файле 'wrapper.html' -->
+{% block content %}
+    
+        <!-- Основная часть -->
+        <main class="main">
+            <div class="main_catalog_home">
+                <h1>Каталог</h1>
+                <div class="catalog_items">
+
+                    <div class="catalog_item">
+                        <a href="/catalog/jacket">
+                            <img src="{% static 'mainApp/images/jacket_1.jpg' %}" height="300" alt="item">
+                            <p>Косуха</p>
+                        </a>
+                    </div>
+
+                    <div class="catalog_item">
+                        <a href="/catalog/red_dress">
+                            <img src="{% static 'mainApp/images/red_dress_1.jpg' %}" height="300" alt="item">
+                            <p>Вечернее платье</p>
+                        </a>
+                    </div>
+                    
+                    <div class="catalog_item">
+                        <a href="/catalog/blue_dress">
+                            <img src="{% static 'mainApp/images/blue_dress_1.jpg' %}" height="300" alt="item">
+                            <p>Замшевое платье</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+{% endblock %}

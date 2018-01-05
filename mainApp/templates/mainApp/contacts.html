@@ -1,0 +1,49 @@
+<!-- Подключаем файл обёртку  -->
+{% extends "mainApp/wrapper.html" %} 
+<!-- это то что будет отвечать за главный вид сайта -->
+{% load static %}
+
+<!-- Блок контента. 
+    То, что будем вставлять в блоке контента
+    в файле 'wrapper.html' -->
+{% block content %}
+    
+    <!-- Цветовая шапка -->
+    <div class="testColor">
+        <div class="SiteExampleImage">
+            <img src="{% static 'mainApp/SiteExample.jpg' %}" alt="SiteExample">
+        </div>
+        <div class="ColorBox testColor1"> </div>
+        <div class="ColorBox testColor2"> </div>
+        <div class="ColorBox testColor3"> </div>
+        <div class="ColorBox testColor4"> </div>
+    </div>
+    <!-- ###################### -->
+
+    <!-- Основная часть -->
+    <main class="main">
+        <div class="main_contacts">
+        <h1>Контакты</h1>
+        <h3>Форма обратной связи</h3>
+        <form action="https://www.google.ru/">
+            <label>Ваше Имя </label><input type="text" placeholder="Имя"><br><br>
+            <label>Ваш Email </label><input type="email" placeholder="Электронная почта"><br><br>
+            <label>Предложение: </label><textarea placeholder="Что вам понравилось?"></textarea><br><br>
+            <label>Подписаться на нашу новостную рассылку </label><input type="checkbox" checked=""><br><br>
+            <input type="submit" value="Оставить предложение">
+            <input type="reset" value="Очистить форму">
+        </form>
+
+
+        <div class="contacts_address">
+            <h3>Как нас найти</h3>
+        <p>Наш адрес: <b><i>Милан, Ломбардия, Италия</i></b><br>
+        45.469157, 9.181438</p>
+        <p><a href="mailto:yandex@yandex.ru">Написать нам.</a></p>
+        <iframe id="map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A58a23f1b93cb89ed86956ba6b1ac5eb93499e4ba30a3035ff73bfa916fc29f8f&amp;source=constructor"></iframe>
+        </div>
+        
+        </div>
+    </main>
+    
+{% endblock %}

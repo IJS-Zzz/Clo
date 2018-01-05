@@ -1,0 +1,17 @@
+{% extends "mainApp/lesson/wrapper2.html" %}
+
+{% block content %}
+
+    {% for val in values %}
+    
+        {% if val == 'Привет!' %}
+            <h3>{{val}}</h3>
+        
+
+        {% else %}
+            <p>{{val}}</p>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
