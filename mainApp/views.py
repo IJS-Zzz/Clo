@@ -30,27 +30,3 @@ def catalog_jacket(request):
     # рендер страницы HTML
     return render(request, 'mainApp/catalog/jacket.html')
 
-
-# ==== lesson ====
-def home(request):
-    # рендер страницы HTML
-    return render(request, 'mainApp/lesson/homePage.html')
-
-def basic(request):
-    # рендер страницы HTML
-    return render(request, 'mainApp/lesson/basic.html',
-        {
-            'values':
-                ['Привет!',
-                'Если у вас остались вопросы, то задайте их мне по телефону',
-                '(068) 068-68-68']
-        })
-
-# =========== TEST ===================
-# from .templates.mainApp import page
-# страница как переменная page
-# из файла "templates/mainApp/page.py"
-
-def fuck_u(request):
-    return HttpResponse("Fuck U!")
-# =========== TEST ===================

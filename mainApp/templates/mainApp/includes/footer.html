@@ -12,6 +12,10 @@
                 <img src="{% static 'mainApp/images/instagram.png' %}" alt="Ссылка instagram" height="20"></a>
             </p>
         </div>
-        <div id="all_rights_protections">Все права защищены.&nbsp;&copy;&nbsp;2017</div>
+        <div id="all_rights_protections">
+            Все права защищены.&nbsp;&copy;&nbsp;2017
+            <a href="{% url 'lesson:home' %}"> lesson </a>
+            <a href="{% url 'polls:index' %}"> polls </a>
+        </div>
     </div>
 </footer>

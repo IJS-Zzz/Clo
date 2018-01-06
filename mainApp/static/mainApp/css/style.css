@@ -305,10 +305,10 @@ footer{
 }
 .main_index button[onclick="next()"]{
     background: #ccc url(/static/mainApp/images/arrow.png) no-repeat center;
-    }
 }
 
-.loading_box{
+
+#loading_box{
     overflow: auto;
     width: 200px;
     height: 5px;
