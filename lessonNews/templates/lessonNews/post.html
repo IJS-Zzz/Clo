@@ -1,0 +1,17 @@
+{% extends "lesson/wrapper.html" %}
+
+
+{% block content %}
+    
+    <!-- модель Articles, ссылаемся на переменную как: -->
+    <h2 class="text-info">{{articles.title}}</h2>
+
+    <!--                                  фильтр по дате     -->
+    <h6 class="text-info">Опубликовано: {{articles.date|date:"Y-m-d в H:i:s"}}</h6>
+
+    <!--               safe - фильтр сохраняющий теги html в тексте post поста
+                              *без фильтра "safe" теги html будут отображаться как обычный текст-->
+    <!--                    linebreaks - переносы -->
+    <p>{{articles.post|safe|linebreaks}}</p>
+
+{% endblock %}
