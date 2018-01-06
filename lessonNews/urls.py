@@ -35,7 +35,7 @@ urlpatterns = [
 
     #   DetailView - отображение конкретной модели
     path('<int:pk>/',
-        DetailView.as_view(models=Articles,
+        DetailView.as_view(model=Articles,
             template_name="lessonNews/post.html"))
 
 ]
