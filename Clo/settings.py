@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mainApp',
     'lesson',
     'lessonNews',
+    'games',
     'polls.apps.PollsConfig' , # Опрос, отправляет к файлу apps.py приложения polls, Какия-то хитрая схема!?
 ]
 

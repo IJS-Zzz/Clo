@@ -24,4 +24,5 @@ urlpatterns = [
     path('lesson/', include('lesson.urls')),
     path('lesson/news/', include('lessonNews.urls')),
     path('polls/', include('polls.urls')),
+    path('games/', include('games.urls')),
 ]
