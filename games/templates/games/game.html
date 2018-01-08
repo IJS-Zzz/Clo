@@ -11,8 +11,13 @@
     <div id="box">
         <div id="ball"></div>
     </div>
-    <div id="reset" onclick="reset()">
-        Reset
+    <div id="key_box">
+        <div class="button" id="ball_left" onclick="ball_move('left')">Move Left</div>
+        <div class="button" id="ball_right" onclick="ball_move('right')">Move Right</div>
+        <div class="button" id="ball_up" onclick="ball_move('up')">Move Up</div>
+        <div class="button" id="ball_jump" onclick="ball_move('jump')">Jump</div>
+        <div class="button" id="ball_down" onclick="ball_move('down')">Move Down</div>
+        <div class="button" id="reset" onclick="reset()">Reset</div>
     </div>
 </body>
 </html>

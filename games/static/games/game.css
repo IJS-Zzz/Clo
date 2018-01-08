@@ -31,7 +31,12 @@ body{
     border-radius: 50%;
     background: #f66663;
 }
-#reset{
+#key_box{
+    width: 500px;
+    position: relative;
+    margin: 0 auto;
+}
+.button{
     height: 30px;
     width: 100px;
     margin: 20px auto;
@@ -45,8 +50,22 @@ body{
     font-size: 16px;
     line-height: 28px;
 }
-#reset:hover{
+.button:hover{
     background: #999;
     color: #f8f6ed;
     border-color: #aaa;
+}
+#ball_left{
+    float: left;
+    margin-top: 56px;
+    margin-left: 70px;
+}
+#ball_right{
+    float: right;
+    margin-top: 56px;
+    margin-right: 70px;
+}
+#reset{
+    float: right;
+    margin: 20px 0 0 0;
 }

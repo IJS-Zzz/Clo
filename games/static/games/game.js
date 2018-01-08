@@ -22,13 +22,9 @@ function new_color() {
 }
 
 
-
-function jump(){
-    var ball_style = getComputedStyle(ball);
-    var top = parseInt(ball_style.top, 10);
-
+// Обработка движения мяча
+function ball_jump(ball, ball_style, top, left){
     var start = Date.now();
-
     var g = 10;
     var V0 = -13;
     var y = 0;
@@ -41,11 +37,10 @@ function jump(){
             top = top + y;
             ball.style.top = top + 'px';
             if (top <= -30 && change_color){
-                    new_color()
-                    change_color = false;
+                new_color();
+                change_color = false;
             }
             // console.log(top + "   "+ y + '    ' + time);
-
         }
         else{
             ball.style.top = '460px';
@@ -55,68 +50,102 @@ function jump(){
     }, 20);
 }
 
+function ball_up(ball, ball_style, top, left){
+    if (top <= -30){
+        top = 490
+        new_color();
+    }
+    else{
+        top -= 10;
+    }
+    ball.style.top = top + 'px';
+}
 
+function ball_down(ball, ball_style, top, left){
+    if (top >= 490){
+        top = -30
+        new_color()
+    }
+    else{
+        top += 10;
+    }
+    ball.style.top = top + 'px';
+}
 
+function ball_left(ball, ball_style, top, left){
+    if (left <= -30){
+        left = 490
+        new_color()
+    }
+    else{
+        left -= 10;
+    }
+    ball.style.left = left + 'px';
+}
 
+function ball_right(ball, ball_style, top, left){
+    if (left >= 490){
+        left = -30
+        new_color()
+    }
+    else{
+        left += 10;
+    }
+    ball.style.left = left + 'px';
+}
 
-function move_ball(e) {
+function ball_move(direction){
     var ball = document.getElementById('ball');
     var ball_style = getComputedStyle(ball);
 
     var top = parseInt(ball_style.top, 10);
     var left = parseInt(ball_style.left, 10);
 
+    switch(direction){
+        case 'jump':
+            ball_jump(ball, ball_style, top, left);
+            break;
+        case 'up':
+            ball_up(ball, ball_style, top, left);
+            break;
+        case 'down':
+            ball_down(ball, ball_style, top, left);
+            break;
+        case 'left':
+            ball_left(ball, ball_style, top, left);
+            break;
+        case 'right':
+            ball_right(ball, ball_style, top, left);
+            break;
+    }
+}
+
+// Обработка нажатых клавишь на клавиатуре
+// document.onkeydown = document.onkeyup = document.onkeypress = move_box;
+document.onkeydown = keyboard;
+
+// Обработка клавиатуры
+function keyboard(e) {
     // Стрелка вверх
     if (e.keyCode == 38) {
-        if (top <= -30){
-            top = 490
-            new_color()
-        }
-        else{
-            top -= 10;
-        }
-        ball.style.top = top + 'px';
+        ball_move('up');
     }
     // Стрелка вниз
     else if (e.keyCode == 40) {
-        if (top >= 490){
-            top = -30
-            new_color()
-        }
-        else{
-            top += 10;
-        }
-        ball.style.top = top + 'px';
+        ball_move('down');
     }
     // Стрелка налево
     if (e.keyCode == 37) {
-        if (left <= -30){
-            left = 490
-            new_color()
-        }
-        else{
-            left -= 10;
-        }
-        ball.style.left = left + 'px';
+        ball_move('left');
     }
     // Стрелка направо
     else if (e.keyCode == 39) {
-        if (left >= 490){
-            left = -30
-            new_color()
-        }
-        else{
-            left += 10;
-        }
-        ball.style.left = left + 'px';
+        ball_move('right');
     }
-
     // Пробел
     if(e.keyCode == 32){
-        // console.log(top);
-        jump();
+        ball_move('jump');
     }
-
 }
 
 function reset() {
@@ -124,6 +153,3 @@ function reset() {
     ball.style.top = '230px';
     ball.style.left = '230px';
 }
-
-// document.onkeydown = document.onkeyup = document.onkeypress = move_box;
-document.onkeydown = move_ball;
